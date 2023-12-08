@@ -1,4 +1,3 @@
-
 #include <Wire.h>
 #include <Adafruit_MPL3115A2.h>
 #include <SPI.h>
