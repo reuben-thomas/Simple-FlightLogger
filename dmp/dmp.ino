@@ -1,7 +1,7 @@
 // Dependencies
 #include <SPI.h>
 #include <SD.h>
-#include <MPU6050.h>
+#include <MPU6050_6Axis_MotionApps20.h>
 #include <Adafruit_MPL3115A2.h>
 #include <I2Cdev.h>
 #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
@@ -22,7 +22,7 @@ void setup() {
   pinMode(STATUS_LED_PIN, OUTPUT);
   
   // Serial Write
-  Serial.begin(38400);
+  Serial.begin(9600  );
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
