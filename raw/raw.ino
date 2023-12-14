@@ -8,8 +8,8 @@
 #include <I2Cdev.h>
 
 // SD Card File Constants
-File WRITE_FILE;
-String WRITE_FILE_NAME = "TestFile.csv";
+File MY_FILE;
+String MY_FILE_NAME = "New.txt";
 
 // Pin / I2C Address Assignment
 Adafruit_MPU6050 mpu;
@@ -88,18 +88,19 @@ void loop() {
   Serial.println("");
 
   // Write to File
-  WRITE_FILE = SD.open(WRITE_FILE_NAME, FILE_WRITE);
-  if (WRITE_FILE) {
-    WRITE_FILE.print(timeNow); WRITE_FILE.print(",");
-    WRITE_FILE.print(altitudeMeters); WRITE_FILE.print(",");
-    WRITE_FILE.print(temperatureDegrees); WRITE_FILE.println(",");
-    WRITE_FILE.print(ax); WRITE_FILE.print(",");
-    WRITE_FILE.print(ay); WRITE_FILE.println(",");
-    WRITE_FILE.print(az); WRITE_FILE.print(",");
-    WRITE_FILE.print(wx); WRITE_FILE.print(",");
-    WRITE_FILE.print(wy); WRITE_FILE.println(",");
-    WRITE_FILE.print(wz); WRITE_FILE.print(",");
-    WRITE_FILE.close();
+  MY_FILE = SD.open("data.txt", FILE_WRITE);
+  if (MY_FILE) {
+    MY_FILE.print(timeNow); MY_FILE.print(",");
+    MY_FILE.print(altitudeMeters); MY_FILE.print(",");
+    MY_FILE.print(temperatureDegrees); MY_FILE.print(",");
+    MY_FILE.print(ax); MY_FILE.print(",");
+    MY_FILE.print(ay); MY_FILE.print(",");
+    MY_FILE.print(az); MY_FILE.print(",");
+    MY_FILE.print(wx); MY_FILE.print(",");
+    MY_FILE.print(wy); MY_FILE.print(",");
+    MY_FILE.print(wz); MY_FILE.print(",");
+    MY_FILE.println("");
+    MY_FILE.close();
 
   } else {
     
