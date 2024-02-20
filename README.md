@@ -1,6 +1,7 @@
 # Simple FlightLogger
 Instructtions to build a simple flight logger to run on an Arduino or on a STM32 board. Logs barometric altitude, acceleration and orientation data. We use DMP data to create velocity and position estimates, which are vulnerable to long term drift error. Thus, this should be used for low power rockets only.
-
+### Diagram
+![alt text](https://github.com/reuben-thomas/Simple-FlightLogger/blob/main/diagrams/circuit_diagram.jpeg)
 ### Components
 * Microcontroller: Any Arduino/STM32 with I2C Interface
 * Barometer: MPL3115A2
